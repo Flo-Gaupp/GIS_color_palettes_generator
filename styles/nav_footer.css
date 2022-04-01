@@ -1,0 +1,257 @@
+
+/*header sticky*/
+
+header {
+    position: sticky;
+    top: 0%;
+    background-color: white;
+}
+
+/*top nav*/
+
+.top_nav {
+    display: flex;
+    padding: 0.25rem;
+    margin: 0;
+    height: 4rem;
+    border-bottom: solid 0.75px rgb(204, 201, 201);
+    box-shadow: 0px 2px 6px 0px rgba(92,92,92,0.2);
+}
+
+/*Logo-Icon mit Link zur Homepage*/
+
+.homelink_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+
+}
+
+.logo {
+    height: 80%;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    transition: transform 200ms ease-in-out;
+}
+
+/*
+*
+*visible Menu List styling
+*
+*/
+
+.main_list_top_nav {
+    display: flex;
+    justify-content: right;
+    margin: 0 1rem 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.main_list_top_nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_list_top_nav li a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+/*dropdown logo*/
+
+.dropdown_icon {
+    padding: 0 7px;
+    color: rgb(73, 72, 72);
+
+    transform: rotate(0deg);
+    transition: transform 200ms ease-in-out;
+}
+
+/*Divider*/
+
+.main_list_top_nav .divider {
+    width: 1px;
+    height: 70%;
+    background-color: rgb(204, 201, 201);
+}
+
+/*Sign-Up Button*/
+
+.btn.sign_up_btn {
+    height: 60%;
+}
+
+
+
+/*
+*
+*hidden menu styling
+*
+*/
+
+li.tools_hidden_menu {
+    position: relative;
+}
+
+.hidden_menu {
+    position: absolute;
+    top: 90%;
+    right: 15px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: all 100ms ease-in-out;
+}
+
+ul.hidden_list_top_nav {
+    display: flex;
+    flex-flow: column;
+    width: 30vw;
+    margin: 0;
+    padding: 1rem 0.5rem;
+}
+
+ul.hidden_list_top_nav li {
+    display: block;
+    border-radius: 10px;
+}
+
+.hidden_list_top_nav a {
+    display: flex;
+    align-items: center;
+}
+
+ul.hidden_list_top_nav div {
+    margin: 0;
+    padding: 1rem 1rem 0 2rem;
+}
+
+/* hidden_menu text styling*/
+
+ul.hidden_list_top_nav div h4 {
+    padding: 0; 
+    margin: 0;
+}
+
+ul.hidden_list_top_nav div p {
+    margin-top: 9px;
+    color: gray;
+}
+
+/* hidden_menu icon styling*/
+
+.page_icon.fa-wand-magic-sparkles {
+    color: rgba(28, 214, 183, 0.959);
+    }
+
+.page_icon.fa-swatchbook {
+    color: #ef52b0f5;
+}
+
+.page_icon.fa-image {
+    color: #3ec2fbe3;
+}
+
+.page_icon.fa-circle-half-stroke {
+    color: #f8d857;
+}
+
+/*
+*
+*visibility of the hidden menu
+*
+*/
+
+a.show_menu + .hidden_menu {
+    max-height: 100rem;
+    transition: max-height 700ms ease-in-out;
+
+    border: solid 1px rgb(204, 201, 201);
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px 0px rgba(64,64,64,0.75);
+}
+
+a.show_menu i {
+    transform: rotate(180deg);
+    transition: transform 200ms ease-in-out;
+}
+
+
+/*
+*
+*hover and click effects
+*
+*/
+
+/*visible menu list*/
+
+.tools_btn:hover, .tools_btn:hover .dropdown_icon{
+        color: #418bfb;
+    }
+    
+    .link:hover {
+        color: #418bfb;
+    }
+    
+    .sign_up_btn:hover {
+        box-shadow: none;
+        border-radius: 12px;
+        transition: border-radius 100ms ease-in-out;
+    }
+    
+    .sign_up_btn:active {
+        box-shadow: 0px 1px 3px 0px rgba(64,64,64,0.75) inset;
+    }
+    
+    .homelink_logo:hover .logo {
+        transform: rotate(-190deg);
+        transition: transform 200ms ease-in-out;
+    }
+    
+    .homelink_logo:active .logo {
+        height: 70%;
+        width: auto;
+        transition: all 50ms ease-in-out;
+    }
+    
+/*hidden menu*/
+
+.hidden_list_top_nav li:nth-child(1):hover {
+    background-color: #a4f7e657;
+}
+
+.hidden_list_top_nav li:nth-child(1):hover h4{
+    color: #3dc6aa;
+}
+
+.hidden_list_top_nav li:nth-child(2):hover {
+    background-color: #fa71cf27;
+}
+
+.hidden_list_top_nav li:nth-child(2):hover h4 {
+    color: #fa71cf;
+}
+
+.hidden_list_top_nav li:nth-child(3):hover {
+    background-color: #50d4f947;
+}
+
+.hidden_list_top_nav li:nth-child(3):hover h4 {
+    color: #00c4fa;
+}
+
+.hidden_list_top_nav li:nth-child(4):hover {
+    background-color: #f7df8154;
+}
+
+.hidden_list_top_nav li:nth-child(4):hover h4 {
+    color: #ffd014;
+}

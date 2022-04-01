@@ -6,88 +6,92 @@
     <meta name="description" content="Color Palettes Generator">
     <meta name="author" content="Florian Gaupp">
     <title>ColGen - The super fast color palette generator</title>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/6fe6b99db9.js" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="styles/style.css">
     
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img src="https://via.placeholder.com/110x18.png" alt="logo ColGen"/>
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <a>
-                        Tools
-                        <img src="https://via.placeholder.com/12x12.png" alt="icon_dropdown">
-                    </a>
-                    <div class="menu">
-                        <ul>
-                            <li>
-                                <a href="palette_generator.html">
-                                    <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Palette_Generator">
-                                    <div>
-                                        <p>Palette Generator</p>
-                                        <p>Create your palettes in seconds</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="explore_palettes.html">
-                                    <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Explore Palettes">
-                                    <div>
-                                        <p>Explore Palettes</p>
-                                        <p>Browse millions of trending color schemes</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Image  Picker">
-                                    <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Image_Picker">
-                                    <div>
-                                        <p>Image Picker</p>
-                                        <p>Get beautiful palettes from your photos</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Contrast Checker">
-                                    <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Contrast_Checker">
-                                    <div>
-                                        <p>Contrast Checker</p>
-                                        <p>Check the contrast between two colors</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <span class="divider"></span>
-                </li>
-                <li>
-                    <a href="Sign in">Sign in</a>
-                </li>
-                <li>
-                    <a href="Sign up">Sign up</a>
-                </li>
-            </ul>
+        <nav class="top_nav">
+            <a class="homelink_logo" href="index.html">
+                <img class="logo" src="/assets/images/Logo.png"  alt="logo ColGen"/>
+            </a>
+                <ul class="main_list_top_nav">
+                    <li class="tools_hidden_menu">
+                        <a class="tools_btn link" onclick="this.classList.toggle('show_menu')">      <!--toggle for hidden menu-->
+                            Tools
+                            <i class="fa-solid fa-circle-chevron-down dropdown_icon"></i> <!--Icon Dropdown-->
+                        </a>
+                        <div class="hidden_menu">
+                            <ul class="hidden_list_top_nav">
+                                <li>
+                                    <a href="palette_generator.html">
+                                        <i class="fa-solid fa-2x fa-wand-magic-sparkles page_icon"></i> <!--Icon Magic-->
+                                        <div>
+                                            <h4>Palette Generator</h4>
+                                            <p>Create your palettes in seconds</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="explore_palettes.html">
+                                        <i class="fa-solid fa-2x fa-swatchbook page_icon"></i> <!--Icon Swatchbook-->
+                                        <div>
+                                            <h4>Explore Palettes</h4>
+                                            <p>Browse millions of trending color schemes</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Image  Picker">
+                                        <i class="fa-solid fa-2x fa-image page_icon"></i> <!--Icon Image-->
+                                        <div>
+                                            <h4>Image Picker</h4>
+                                            <p>Get beautiful palettes from your photos</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Contrast Checker">
+                                        <i class="fa-solid fa-2x fa-circle-half-stroke page_icon"></i> <!--Icon Contrast-->
+                                        <div>
+                                            <h4>Contrast Checker</h4>
+                                            <p>Check the contrast between two colors</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                    <li>
+                        <a class="link" href="Sign in">Sign in</a>
+                    </li>
+                    <li>
+                        <a class="btn sign_up_btn" href="Sign up">Sign up</a>
+                    </li>
+                </ul>
         </nav>
 
     </header>
     <main>
-              
                        <h1>The super fast color palettes generator</h1>
                        <p>Create the perfect palette or get inspired by thousands of beautiful color schemes</p>
                     
                            <a href="Palette Generator">Start the generator!</a>    <!--Button-->
                            <a href="Explore Palettes">Explore trending palettes</a> <!--Button-->
             
-                       <img id="homepage_hero_color_palettes" src="https://via.placeholder.com/644x492.png" alt="Farbpaletten">
+                       <img  src="/assets/images/Color_Palattes.png" alt="Farbpaletten">
         
                
                            <a href="palette_generator.html">
                                
-                                   <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Palette_Generator">
+                            <i class="fa-solid fa-wand-magic-sparkles page_icon"></i> <!--Icon Magic-->
                                    <strong>Palette generator</strong>
                                    <p>Create your palettes in seconds</p>
                            
@@ -97,8 +101,8 @@
              
                         <a href="explore_palettes.html">
                         
-                                <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Explore_Palettes">
-                                <strong>Explore Palettes</strong>
+                            <i class="fa-solid fa-swatchbook page_icon"></i> <!--Icon Swatchbook-->
+                            <strong>Explore Palettes</strong>
                                 <p>Browse millions of trending color schemes</p>
                             
                             <p>Explore</p>
@@ -107,8 +111,8 @@
                 
                         <a href="Image  Picker">
                         
-                                <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Image_Picker">
-                                <strong>Image  Picker</strong>
+                            <i class="fa-solid fa-image page_icon"></i> <!--Icon Image-->
+                            <strong>Image  Picker</strong>
                                 <p>Get beautiful palettes from your photos</p>
             
                             <p>Upload photos</p>
@@ -117,8 +121,8 @@
               
                         <a href="Contrast Checker">
         
-                                <img class="icon" src="https://via.placeholder.com/55x55.png" alt="icon_Contrast_Checker">
-                                <strong>Contrast Checker</strong>
+                            <i class="fa-solid fa-circle-half-stroke page_icon"></i> <!--Icon Contrast-->
+                            <strong>Contrast Checker</strong>
                                 <p>Check the contrast between two colors</p>
                         
                             <p>increase legibility</p>
