@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/6fe6b99db9.js" crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/content_index.css">
     
 </head>
 <body>
@@ -18,6 +19,7 @@
         <nav class="top_nav">
             <a class="homelink_logo" href="index.html">
                 <img class="logo" src="/assets/images/Logo.png"  alt="logo ColGen"/>
+                <span>ColGen</span>
             </a>
                 <ul class="main_list_top_nav">
                     <li class="tools_hidden_menu">
@@ -80,56 +82,69 @@
 
     </header>
     <main>
-                       <h1>The super fast color palettes generator</h1>
-                       <p>Create the perfect palette or get inspired by thousands of beautiful color schemes</p>
-                    
-                           <a href="Palette Generator">Start the generator!</a>    <!--Button-->
-                           <a href="Explore Palettes">Explore trending palettes</a> <!--Button-->
-            
-                       <img  src="/assets/images/Color_Palattes.png" alt="Farbpaletten">
-        
-               
-                           <a href="palette_generator.html">
-                               
-                            <i class="fa-solid fa-wand-magic-sparkles page_icon"></i> <!--Icon Magic-->
-                                   <strong>Palette generator</strong>
-                                   <p>Create your palettes in seconds</p>
-                           
-                               <p>Make a palette</p>
-                           </a>
-              
-             
-                        <a href="explore_palettes.html">
-                        
-                            <i class="fa-solid fa-swatchbook page_icon"></i> <!--Icon Swatchbook-->
-                            <strong>Explore Palettes</strong>
-                                <p>Browse millions of trending color schemes</p>
-                            
-                            <p>Explore</p>
-                        </a>
-                    
-                
-                        <a href="Image  Picker">
-                        
-                            <i class="fa-solid fa-image page_icon"></i> <!--Icon Image-->
-                            <strong>Image  Picker</strong>
-                                <p>Get beautiful palettes from your photos</p>
-            
-                            <p>Upload photos</p>
-                        </a>
+        <div class="index_main_content wrapper">
+            <div class="index_main_content_left">
+                <div class="index_main_content_text">
+                    <h1>The super fast color palettes generator</h1>
+                    <p>Create the perfect palette or get inspired by thousands of beautiful color schemes</p>
+                </div>
+                <div class="index_main_content_button">
+                    <a class="btn" href="palette_generator.html">Start the generator!</a>    <!--Button-->
+                    <a class="btn" href="explore_palettes.html">Explore trending palettes</a> <!--Button-->
+                </div> 
+            </div>
+            <img class="color_palettes" src="/assets/images/Color_Palattes.png" alt="Farbpaletten">
+        </div>    
+        <div class="index_main_page_menu">  
+            <a href="palette_generator.html">
+                <div class="index_main_page_menu_box">   
+                    <i class="fa-solid fa-3x fa-wand-magic-sparkles page_icon"></i> <!--Icon Magic-->
+                    <strong>Palette generator</strong>
+                    <p>Create your palettes in seconds</p>
+                </div> 
+                <div class="index_main_page_menu_hidden">
+                    <p>Make a palette</p>
+                </div>
+            </a>
+
+
+            <a href="explore_palettes.html">
+                <div class="index_main_page_menu_box">  
+                    <i class="fa-solid fa-3x fa-swatchbook page_icon"></i> <!--Icon Swatchbook-->
+                    <strong>Explore Palettes</strong>
+                    <p>Browse millions of trending color schemes</p>
+                </div>  
+                <div class="index_main_page_menu_hidden">  
+                    <p>Explore</p>
+                </div>
+            </a>
     
-              
-                        <a href="Contrast Checker">
-        
-                            <i class="fa-solid fa-circle-half-stroke page_icon"></i> <!--Icon Contrast-->
-                            <strong>Contrast Checker</strong>
-                                <p>Check the contrast between two colors</p>
-                        
-                            <p>increase legibility</p>
-                        </a>
+
+            <a href="Image  Picker">
+                <div class="index_main_page_menu_box">  
+                    <i class="fa-solid fa-3x fa-image page_icon"></i> <!--Icon Image-->
+                    <strong>Image  Picker</strong>
+                    <p>Get beautiful palettes from your photos</p>
+                </div>
+                <div class="index_main_page_menu_hidden">
+                    <p>Upload photos</p>
+                </div>
+            </a>
+
+
+            <a href="Contrast Checker">
+                <div class="index_main_page_menu_box">  
+                    <i class="fa-solid fa-3x fa-circle-half-stroke page_icon"></i> <!--Icon Contrast-->
+                    <strong>Contrast Checker</strong>
+                    <p>Check the contrast between two colors</p>
+                </div>
+                <div class="index_main_page_menu_hidden">
+                    <p>increase legibility</p>
+                </div>
+            </a>
                  
-           
-               <p>Used by awesome companies</p>
+        </div>       
+        <p class="used_by_companies">Used by awesome companies</p>
     </main>
     <footer>
         <p>@ ColGen by <em>Florian Gaupp</em>. From a creative to all the others.</p>

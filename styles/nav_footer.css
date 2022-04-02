@@ -22,10 +22,8 @@ header {
 
 .homelink_logo {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    width: 4rem;
-
 }
 
 .logo {
@@ -34,6 +32,12 @@ header {
     padding: 0;
     margin: 0;
     transition: transform 200ms ease-in-out;
+}
+
+.homelink_logo span {
+    padding-left: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 /*
@@ -182,6 +186,31 @@ a.show_menu + .hidden_menu {
 a.show_menu i {
     transform: rotate(180deg);
     transition: transform 200ms ease-in-out;
+}
+
+/*
+*
+*footer
+*
+*/
+footer {
+    height: 4rem;
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    background-color: rgba(202, 202, 202, 0.453);
+    border-top: solid 0.75px rgb(204, 201, 201);
+    box-shadow: 0px -2px 10px 0px rgba(92,92,92,0.2);
+}
+
+footer p {
+    margin: 3rem 0 1rem 0;
+    padding: 0;
+}
+
+footer p em {
+    font-style: normal;
+    font-weight: 500;
 }
 
 
