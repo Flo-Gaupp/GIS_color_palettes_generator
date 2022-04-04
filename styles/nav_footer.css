@@ -1,4 +1,5 @@
 
+
 /*header sticky*/
 
 header {
@@ -285,4 +286,55 @@ footer p em {
 
 .hidden_list_top_nav li:nth-child(4):hover h4 {
     color: #ffd014;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*MEDIA SCREEN
+*
+*/
+
+@media screen and (max-width: 580px) {
+
+.homelink_logo span {
+    display: none;
+}
+
+.main_list_top_nav a.sign_up_btn, .main_list_top_nav a.sign_in {
+    display: none;
+}
+
+.divider {
+    display: none;
+}
+
+.hidden_menu {
+    right: -10%;
+}
+
+.hidden_list_top_nav p {
+    display: none;
+}
+
+ul.hidden_list_top_nav {
+    justify-content: center;
+}
+
+.hidden_list_top_nav li {
+    margin-bottom: 1em;
+}
+
+
+footer {
+    display: none;
+}
 }

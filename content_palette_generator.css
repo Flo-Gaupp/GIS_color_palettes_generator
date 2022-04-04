@@ -62,6 +62,7 @@ body {
     color: initial;
     border-radius: 10px;
     box-shadow: none;
+    cursor: pointer;
 }
 
 a.toolbar_view_btn i, a.toolbar_export_btn i {
@@ -82,7 +83,9 @@ padding-right: 10%;
     background-color: rgb(230, 230, 230);
 }
 
-
+.palette_generator_toolbar a:active {
+    background-color: rgb(218, 217, 217);
+}
 
 
 
@@ -152,6 +155,7 @@ padding-right: 10%;
     width: 6vh;
     height: 6vh;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /*color TEXT*/
@@ -212,4 +216,78 @@ padding-right: 10%;
 
 .palette_generator_color:nth-child(5) {
     background-color: #ffd972;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*MEDIA SCREEN
+*
+*/
+
+
+@media screen and (max-width: 610px) {
+
+    header .top_nav {
+    height: 10vh;
+    }
+
+    .palette_generator_toolbar {
+        height: 8vh;
+    }
+
+    .palette_generator_toolbar p {
+    display: none;
+    }
+
+    .palette_generator_colorbar {
+        flex-flow: column;
+        height: 82vh;
+    }
+
+    .palette_generator_color {
+        margin: 0;
+        padding-bottom: 0;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .palette_generator_color ul {
+        display: none;
+    }
+
+    .palette_generator_color p:last-of-type {
+        display: none;
+    }
+
+    .palette_generator_color p {
+        margin:  0 0 0 10%;
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .palette_generator_toolbar {
+        display: none;
+    }
+
+    .palette_generator_colorbar {
+        height: 90vh;
+    }
 }
