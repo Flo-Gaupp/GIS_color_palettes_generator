@@ -1,0 +1,215 @@
+/*content palette generator*/
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*
+*
+*nav_searchbar
+*
+*/
+
+/*layout nav*/
+
+.top_nav {
+    box-shadow: none;
+    border-bottom: solid 1px rgb(223, 223, 223);
+}
+
+.palette_generator_toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0 0.25em;
+    height: 3rem;
+    border-bottom: solid 0.75px rgb(204, 201, 201);
+    box-shadow: 0px 2px 6px 0px rgba(92,92,92,0.2);
+}
+
+
+/*searchbar*/
+
+.palette_generator_toolbar p {
+    padding-left: 1rem;
+    margin: auto 0;
+    color: rgb(154, 154, 154);
+}
+
+/*nav*/
+
+.palette_generator_toolbar ul {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 0 1rem 0 auto;
+    list-style: none;
+}
+
+.palette_generator_toolbar ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em 0;
+}
+
+.palette_generator_toolbar a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.75rem;
+    color: initial;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+a.toolbar_view_btn i, a.toolbar_export_btn i {
+padding-right: 10%;
+}
+
+/*divider*/
+
+.palette_generator_toolbar .divider {
+    height: 80%;
+    margin: 0 0.25em;
+}
+
+
+/*hover*/
+
+.palette_generator_toolbar a:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*
+*Main Content
+*
+*/
+
+
+
+
+/*layout colorbars*/
+
+.palette_generator_colorbar {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.palette_generator_color {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-flow: column;
+    flex: 1;
+    margin-bottom: 7rem;
+    padding-bottom: 5vh;
+}
+
+/*colorbar_toolbar*/
+
+.palette_generator_color ul {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: end;
+    height: 100%;
+    margin-top: auto;
+    padding: 0;
+    list-style: none;
+
+    opacity: 0;
+    transition: opacity 100ms ease;
+}
+
+.palette_generator_color ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+    height: 10%;
+}
+
+.palette_generator_color ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 10px;
+}
+
+/*color TEXT*/
+
+.palette_generator_color p:first-of-type {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 2vh;
+}
+
+.palette_generator_color p:last-of-type {
+    font-size: 0.7em;
+    font-weight: 300;
+    color: rgb(78, 78, 78);
+    margin-bottom: 2.5rem;
+}
+
+
+/*
+*
+*Hover
+*
+*/
+
+.palette_generator_color:hover ul {
+    opacity: 1;
+}
+
+.palette_generator_color a:hover {
+    background-color: rgba(40, 40, 40, 0.088);
+}
+
+
+
+
+
+/*
+*
+*Test colors
+*
+*/
+
+.palette_generator_color:nth-child(1) {
+    background-color: #C7EAE4;
+}
+
+.palette_generator_color:nth-child(2) {
+    background-color: #A7e8bd;
+}
+
+.palette_generator_color:nth-child(3) {
+    background-color: #fcbcb8;
+}
+
+.palette_generator_color:nth-child(4) {
+    background-color: #efa7a7;
+}
+
+.palette_generator_color:nth-child(5) {
+    background-color: #ffd972;
+}

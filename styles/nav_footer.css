@@ -4,6 +4,7 @@
 header {
     position: sticky;
     top: 0%;
+    z-index: 100;
     background-color: white;
 }
 
@@ -30,13 +31,13 @@ header {
     height: 80%;
     width: auto;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 1rem;
     transition: transform 200ms ease-in-out;
 }
 
 .homelink_logo span {
-    padding-left: 0.5rem;
-    font-size: 2rem;
+    padding-left: 0.5em;
+    font-size: 2em;
     font-weight: 700;
 }
 
@@ -64,14 +65,14 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 1rem;
+    padding: 0 1em;
     cursor: pointer;
 }
 
 /*dropdown logo*/
 
 .dropdown_icon {
-    padding: 0 7px;
+    padding: 0 0.5em;
     color: rgb(73, 72, 72);
 
     transform: rotate(0deg);
@@ -80,7 +81,7 @@ header {
 
 /*Divider*/
 
-.main_list_top_nav .divider {
+.divider {
     width: 1px;
     height: 70%;
     background-color: rgb(204, 201, 201);
@@ -107,9 +108,10 @@ li.tools_hidden_menu {
 .hidden_menu {
     position: absolute;
     top: 90%;
-    right: 15px;
+    right: 15%;
     background-color: white;
     max-height: 0;
+    width: 22em;
     overflow: hidden;
 
     transition: all 100ms ease-in-out;
@@ -118,9 +120,9 @@ li.tools_hidden_menu {
 ul.hidden_list_top_nav {
     display: flex;
     flex-flow: column;
-    width: 30vw;
+    width: 100%;
     margin: 0;
-    padding: 1rem 0.5rem;
+    padding: 1em 0.5em;
 }
 
 ul.hidden_list_top_nav li {
@@ -135,7 +137,7 @@ ul.hidden_list_top_nav li {
 
 ul.hidden_list_top_nav div {
     margin: 0;
-    padding: 1rem 1rem 0 2rem;
+    padding: 1em 1em 0 2em;
 }
 
 /* hidden_menu text styling*/
@@ -146,7 +148,7 @@ ul.hidden_list_top_nav div h4 {
 }
 
 ul.hidden_list_top_nav div p {
-    margin-top: 9px;
+    margin-top: 0.55em;
     color: gray;
 }
 
@@ -194,17 +196,17 @@ a.show_menu i {
 *
 */
 footer {
-    height: 4rem;
+    height: 4em;
     margin: 0;
-    padding: 1rem;
-    padding-bottom: 1.5rem;
+    padding: 1em 1rem;
+    padding-bottom: 1.5em;
     background-color: rgba(202, 202, 202, 0.453);
     border-top: solid 0.75px rgb(204, 201, 201);
     box-shadow: 0px -2px 10px 0px rgba(92,92,92,0.2);
 }
 
 footer p {
-    margin: 3rem 0 1rem 0;
+    margin: 3em 0 1em 1rem;
     padding: 0;
 }
 
