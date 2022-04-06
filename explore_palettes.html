@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +11,31 @@
     <script src="https://kit.fontawesome.com/6fe6b99db9.js" crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/content_explore_palettes.css">
     
 </head>
 <body>
     <header>
         <nav class="top_nav">
+
+            <!--Logo-->
+
             <a class="homelink_logo" href="index.html">
                 <img class="logo" src="/assets/images/Logo.png"  alt="logo ColGen"/>
                 <span>ColGen</span>
             </a>
+
+            <!--Main list-->
+
                 <ul class="main_list_top_nav">
                     <li class="tools_hidden_menu">
                         <a class="tools_btn link" onclick="this.classList.toggle('show_menu')">      <!--toggle for hidden menu-->
                             Tools
-                            <i class="fa-solid fa-circle-chevron-down dropdown_icon"></i> <!--Icon Dropdown-->
+                            <i class="fa-solid fa-circle-chevron-down dropdown_icon"></i>    <!--Icon Dropdown-->
                         </a>
+
+                        <!--Hidden Menu-->
+
                         <div class="hidden_menu">
                             <ul class="hidden_list_top_nav">
                                 <li>
@@ -67,31 +77,278 @@
                             </ul>
                         </div>
                     </li>
+
+                    <!--Main List-->
+
                     <li>
                         <div class="divider"></div>
                     </li>
                     <li>
-                        <a class="sign_in" href="Sign in">Sign in</a>
+                        <a class="sign_in">Sign in</a>  <!--Sign In Button-->
                     </li>
                     <li>
-                        <a class="btn sign_up_btn" href="Sign up">Sign up</a>
+                        <a class="btn sign_up_btn">Sign up</a>  <!--Sign up Button-->
                     </li>
                 </ul>
         </nav>
 
-    </header>    
-            <div id="explore_palettes_search">
-            <i class="fa-solid fa-magnifying-glass"></i> <!--Lupe Icon-->
-            <input type="text" id="explore_palettes_search_input" placeholder="Search with colors, topics, styles or hex values...">
-    </div>
+    <!--Second Nav/Searchbar-->
+
+        <div class="explore_palettes_searchbar">
+            <i class="fa-solid fa-2x fa-magnifying-glass icon_lupe"></i> <!--Lupe Icon-->
+            <input type="text" class="explore_palettes_searchbar_input" placeholder="Search with colors, topics, styles or hex values...">
+        </div>
+    </header>
+    
+
     <main>
-        <div id="explore_palettes_title">
-                <h1>Popular Color Palettes</h1>
-                <p>Get inspired by thousands of beautiful color schemes and make something cool!</p>
-        </div>
-        <div id="explore_palettes_result_container">
-            Platzhalter für Farbpaletten
-        </div>
+
+        <!--Main Title-->
+        <section class="title">
+            <div class="title_text">
+                    <h1>Popular Color Palettes</h1>
+                    <h2>Get inspired by thousands of beautiful color schemes and make something cool!</h2>
+            </div>
+        </section>
+
+        <!--Grid Color-palettes-->
+
+        <section class="color_palettes_result">
+            <div class="color_palettes_result_grid wrapper">
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>cdb4db</span></div>
+                    <div class="color"><span>ffc8dd</span></div>
+                    <div class="color"><span>ffafcc</span></div>
+                    <div class="color"><span>bde0fe</span></div>
+                    <div class="color"><span>a2d2ff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ccd5ae</span></div>
+                    <div class="color"><span>e9edc9</span></div>
+                    <div class="color"><span>fefae0</span></div>
+                    <div class="color"><span>faedcd</span></div>
+                    <div class="color"><span>d4a373</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>ffcbf2</span></div>
+                    <div class="color"><span>f3c4fb</span></div>
+                    <div class="color"><span>ecbcfd</span></div>
+                    <div class="color"><span>e5b3fe</span></div>
+                    <div class="color"><span>e2afff</span></div>
+                    <div class="color"><span>deaaff</span></div>
+                    <div class="color"><span>d8bbff</span></div>
+                    <div class="color"><span>d0d1ff</span></div>
+                    <div class="color"><span>c8e7ff</span></div>
+                    <div class="color"><span>c0fdff</span></div>
+                </div>
+                <div class="colorbar">
+                    <div class="color"><span>f08080</span></div>
+                    <div class="color"><span>f4978e</span></div>
+                    <div class="color"><span>f8ad9d</span></div>
+                    <div class="color"><span>fbc4ab</span></div>
+                    <div class="color"><span>ffdab9</span></div>
+                </div>
+            </div>
+            <aside class="load_more"><a class="load_more_btn btn">Load more</a></aside>
+        </section>
     </main>
 </body>
 </html>
