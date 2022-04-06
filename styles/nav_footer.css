@@ -26,6 +26,7 @@ header {
     display: flex;
     justify-content: left;
     align-items: center;
+    width: 14rem;
 }
 
 .logo {
@@ -50,7 +51,7 @@ header {
 
 .main_list_top_nav {
     display: flex;
-    justify-content: right;
+    justify-content: right; 
     margin: 0 1rem 0 auto;
     padding: 0;
     list-style: none;
