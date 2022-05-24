@@ -1,5 +1,6 @@
 "use strict";
 
+
 export class Color {
     constructor(hexCode) {
         this.hexCode = hexCode;

@@ -3,12 +3,14 @@
 import { Color } from "./Color.js";
 import { ColorPalette } from "./ColorPalette.js";
 
+
 const hexCodeText = document.getElementsByClassName("hex_code_text");
 const _copyIcons = document.getElementsByClassName("colorbar_toolbar_copy_hex");
 const copyHexConfirmationContainer = document.querySelector(".copy_hex_confirmation_container");
 const _colors = document.getElementsByClassName("palette_generator_color");
 const _lockIconAtag = document.getElementsByClassName("colorbar_toolbar_unlock");
 const _lockIcon = document.getElementsByClassName("icon_unlock");
+const _colorLabel = document.getElementsByClassName("colorLabel");
 
 
 // eslint-disable-next-line max-len
@@ -33,6 +35,8 @@ function generateColors() {
             _colors[i].style.backgroundColor = "#" + hexCode;
             const hexCodeP = _colors[i].querySelector("p");
             hexCodeP.innerHTML = hexCode;
+            const name = _colorLabel[i];
+            colorNameRequest(hexCode, name);
             if (getContrast50(hexCodeP.innerHTML) === "black") {
                 hexCodeP.style.color = "#000000";
             } else {
@@ -41,6 +45,18 @@ function generateColors() {
         }
     }
 }
+
+/* Color API ColorNames */
+
+async function colorNameRequest(hexCode, name) {
+    const url = "https://www.thecolorapi.com/id?hex=" + hexCode;
+    const response = await fetch(url);
+    console.log(response);
+    console.log(JSON.parse(response));
+    name.innerHTML = await response.text();
+}
+
+/* Choose correct font color */
 
 function getContrast50(hexcolor) {
     return (parseInt(hexcolor, 16) > 0xffffff / 2) ? "black" : "white";
