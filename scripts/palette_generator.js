@@ -39,8 +39,10 @@ function generateColors() {
             colorNameRequest(hexCode, name);
             if (getContrast50(hexCodeP.innerHTML) === "black") {
                 hexCodeP.style.color = "#000000";
+                name.style.color = "#000000";
             } else {
                 hexCodeP.style.color = "#ffffff";
+                name.style.color = "#ffffff";
             }
         }
     }
@@ -51,9 +53,7 @@ function generateColors() {
 async function colorNameRequest(hexCode, name) {
     const url = "https://www.thecolorapi.com/id?hex=" + hexCode;
     const response = await fetch(url);
-    console.log(response);
-    console.log(JSON.parse(response));
-    name.innerHTML = await response.text();
+    name.innerHTML = JSON.parse(await response.text()).name.value;
 }
 
 /* Choose correct font color */
