@@ -20,18 +20,41 @@ const jsonString = JSON.stringify(allPalettes);
 // Serverrequest HTML ColorPalettes
 
 const url = "http://localhost:3000/";
+let dataPromise;
 
 async function sendJSONStringWithPOST() {
     const response = await fetch(url, {
         method: "post",
         body: jsonString
     });
-    _colorPalettesResultContainer.innerHTML += await response.text();
+    dataPromise = response.text();
+    _colorPalettesResultContainer.innerHTML += await dataPromise;
+    if (dataPromise.then(copyHexListener));
 }
 
 sendJSONStringWithPOST();
 
+// EventListener CopyHex
+
+function copyHexListener() {
+    const _copyContainer = document.getElementsByClassName("color");
+    for (const i of _copyContainer) {
+        i.addEventListener("click", function(event) {
+            const item = event.currentTarget.querySelector("span");
+            const spanSafe = item.innerHTML;
+            let spanContent = '<i class="fa-solid fa-2x fa-check icon_checked"></i>';
+            navigator.clipboard.writeText(item.innerHTML);
+            item.innerHTML = spanContent;
+            setTimeout(() => {
+                spanContent = spanSafe;
+                item.innerHTML = spanContent;
+            }, 2000);
+        });
+    }
+}
 
 // Load more Button
-_loadMoreButton.addEventListener("click", sendJSONStringWithPOST);
+_loadMoreButton.addEventListener("click", ()=> {
+    sendJSONStringWithPOST();
+});
 
