@@ -22,8 +22,8 @@ const jsonString = JSON.stringify(allPalettes);
 const url = "http://localhost:3000/";
 let dataPromise;
 
-async function sendJSONStringWithPOST() {
-    const response = await fetch(url, {
+async function loadMoreRequestGET() {
+    const response = await fetch(`${url}loadMore`, {
         method: "post",
         body: jsonString
     });
@@ -32,7 +32,7 @@ async function sendJSONStringWithPOST() {
     if (dataPromise.then(copyHexListener));
 }
 
-sendJSONStringWithPOST();
+loadMoreRequestGET();
 
 // EventListener CopyHex
 
@@ -55,6 +55,6 @@ function copyHexListener() {
 
 // Load more Button
 _loadMoreButton.addEventListener("click", ()=> {
-    sendJSONStringWithPOST();
+    loadMoreRequestGET();
 });
 

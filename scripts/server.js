@@ -2,6 +2,7 @@
 "use strict";
 
 const http = require('http');
+const { url } = require('inspector');
 
 const hostname = '127.0.0.1'; // localhost
 const port = 3000;
@@ -12,19 +13,23 @@ const server = http.createServer((request, response) => {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/html");
     response.setHeader("Access-Control-Allow-Origin", "*"); // bei CORS Fehler
-    if (request.method === "POST") {
-        let jsonString = "";
-        request.on("data", (data) => {
-            jsonString += data;
-        });
-        request.on("end", () => {
-            const allPalettes = JSON.parse(jsonString);
-            for (let counter = 0; counter < allPalettes.length; counter++) {
-                paletteHtml += paletteToHtml(allPalettes, counter);
-            }
-            response.end(paletteHtml);
-            paletteHtml = "";
-        });
+    let url = new URL(request.url || '', `http://${request.headers.host}`);
+    switch (url.pathname) {
+    case "/loadMore":
+        if (request.method === "POST") {
+            let jsonString = "";
+            request.on("data", (data) => {
+                jsonString += data;
+            });
+            request.on("end", () => {
+                const allPalettes = JSON.parse(jsonString);
+                for (let counter = 0; counter < allPalettes.length; counter++) {
+                    paletteHtml += paletteToHtml(allPalettes, counter);
+                }
+                response.end(paletteHtml);
+                paletteHtml = "";
+            });
+        }
     }
 });
 server.listen(port, hostname, () => {
