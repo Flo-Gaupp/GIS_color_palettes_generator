@@ -38,11 +38,13 @@ server.listen(port, hostname, () => {
 
 
 function paletteToHtml(allPalettes, counter) {
-    const hexCode = [];
-    for (const i of allPalettes[counter].colors) {
-        hexCode.push(i.hexCode);
+    let paletteHtml = `<div class="colorbar">`;
+    for (let i = 0; i < allPalettes[counter].colors.length; i++) {
+        const hexCode = allPalettes[counter].colors[i].hexCode;
+        paletteHtml += `<div class="color" style="background-color:#${hexCode}"><span style="color:${getContrast50(hexCode)}">${hexCode}</span></div>`;
     }
-    return (`<div class="colorbar"><div class="color" style="background-color:#${allPalettes[counter].colors[0].hexCode}"><span style="color:${getContrast50(hexCode[0])}">${allPalettes[counter].colors[0].hexCode}</span></div><div class="color" style="background-color:#${allPalettes[counter].colors[1].hexCode}"><span style="color:${getContrast50(hexCode[1])}">${allPalettes[counter].colors[1].hexCode}</span></div><div class="color" style="background-color:#${allPalettes[counter].colors[2].hexCode}"><span style="color:${getContrast50(hexCode[2])}">${allPalettes[counter].colors[2].hexCode}</span></div><div class="color" style="background-color:#${allPalettes[counter].colors[3].hexCode}"><span style="color:${getContrast50(hexCode[3])}">${allPalettes[counter].colors[3].hexCode}</span></div><div class="color" style="background-color:#${allPalettes[counter].colors[4].hexCode}"><span style="color:${getContrast50(hexCode[4])}">${allPalettes[counter].colors[4].hexCode}</span></div></div>`);
+    paletteHtml += `</div>`;
+    return (paletteHtml);
 }
 
 function getContrast50(hexcolor) {
