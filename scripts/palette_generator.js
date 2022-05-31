@@ -37,13 +37,8 @@ function generateColors() {
             hexCodeP.innerHTML = hexCode;
             const name = _colorLabel[i];
             colorNameRequest(hexCode, name);
-            if (getContrast50(hexCodeP.innerHTML) === "black") {
-                hexCodeP.style.color = "#000000";
-                name.style.color = "#000000";
-            } else {
-                hexCodeP.style.color = "#ffffff";
-                name.style.color = "#ffffff";
-            }
+            hexCodeP.style.color = getContrast50(hexCodeP.innerHTML);
+            name.style.color = getContrast50(hexCodeP.innerHTML);
         }
     }
 }
@@ -59,14 +54,14 @@ async function colorNameRequest(hexCode, name) {
 /* Choose correct font color */
 
 function getContrast50(hexcolor) {
-    return (parseInt(hexcolor, 16) > 0xffffff / 2) ? "black" : "white";
+    return (parseInt(hexcolor, 16) > 0xffffff / 2) ? "#000000" : "#ffffff";
 }
 
 
 /* Lock Colors */
 
 
-for (let i of _lockIconAtag) {
+for (const i of _lockIconAtag) {
     i.addEventListener("click", toggleLock);
 }
 

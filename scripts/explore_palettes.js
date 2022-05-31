@@ -13,9 +13,10 @@ const palette2 = new ColorPalette(new Color("cdb4db"), new Color("ffc8dd"), new 
 const palette3 = new ColorPalette(new Color("ccd5ae"), new Color("e9edc9"), new Color("fefae0"), new Color("faedcd"), new Color("d4a373"));
 const palette4 = new ColorPalette(new Color("ffcbf2"), new Color("f3c4fb"), new Color("ecbcfd"), new Color("e5b3fe"), new Color("e2afff"));
 const palette5 = new ColorPalette(new Color("f08080"), new Color("f4978e"), new Color("f8ad9d"), new Color("fbc4ab"), new Color("ffdab9"));
+const palette6 = new ColorPalette(new Color("403E5C"), new Color("84D366"), new Color("EC18E5"), new Color("7AB66A"), new Color("E26228"));
+const palette7 = new ColorPalette(new Color("FF9393"), new Color("482A80"), new Color("1F3FD4"), new Color("021B45"), new Color("429CCA"));
 
-const allPalettes = [palette1, palette2, palette3, palette4, palette5];
-const jsonString = JSON.stringify(allPalettes);
+const allPalettes = [palette1, palette2, palette3, palette4, palette5, palette6, palette7];
 
 // Serverrequest HTML ColorPalettes
 
@@ -25,7 +26,7 @@ let dataPromise;
 async function loadMoreRequestGET() {
     const response = await fetch(`${url}loadMore`, {
         method: "post",
-        body: jsonString
+        body: JSON.stringify(allPalettes)
     });
     dataPromise = response.text();
     _colorPalettesResultContainer.innerHTML += await dataPromise;
@@ -42,7 +43,7 @@ function copyHexListener() {
         i.addEventListener("click", function(event) {
             const item = event.currentTarget.querySelector("span");
             const spanSafe = item.innerHTML;
-            let spanContent = '<i class="fa-solid fa-2x fa-check icon_checked"></i>';
+            let spanContent = "<i class=\"fa-solid fa-2x fa-check icon_checked\"></i>";
             navigator.clipboard.writeText(item.innerHTML);
             item.innerHTML = spanContent;
             setTimeout(() => {
