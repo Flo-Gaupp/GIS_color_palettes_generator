@@ -1,0 +1,75 @@
+
+body {
+    height: 90vh;
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentBox {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 25rem;
+    border: 0.5px solid grey;
+    border-radius: 20px;
+    box-shadow: 0px 3px 6px 0px rgba(92,92,92,0.7);
+}
+
+.headline {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    padding-top: 1rem;
+    font-size: 2.5em;
+}
+
+h4 {
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: rgb(122, 120, 120);
+}
+
+.formular {
+    display: flex;
+    flex-flow: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    width: 80%;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    gap: 0.8rem;
+}
+
+input {
+    height: 2rem;
+    font-size: 1rem;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.signIn_btn, .close_btn {
+    height: 2.25rem;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.close_btn {
+margin-bottom: 1.5rem;
+background-color: rgb(156, 154, 154);
+}
