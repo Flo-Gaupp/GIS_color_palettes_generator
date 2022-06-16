@@ -7,6 +7,7 @@ import { ColorPalette } from "./ColorPalette.js";
 const hexCodeText = document.getElementsByClassName("hex_code_text");
 const _copyIcons = document.getElementsByClassName("colorbar_toolbar_copy_hex");
 const copyHexConfirmationContainer = document.querySelector(".copy_hex_confirmation_container");
+const saveHexConfirmationContainer = document.querySelector(".save_palette_confirmation_container");
 const _colors = document.getElementsByClassName("palette_generator_color");
 const _lockIconAtag = document.getElementsByClassName("colorbar_toolbar_unlock");
 const _lockIcon = document.getElementsByClassName("icon_unlock");
@@ -88,4 +89,23 @@ function copyHexCode(counter) {
     }, 2000);
 }
 
+// Server Connection   Save Palette
 
+const url = "http://localhost:3000/";
+
+
+async function savePalettePOST() {
+    await fetch(`${url}savePalette`, {
+        method: "post",
+        body: JSON.stringify(currentPalette)
+    });
+}
+
+
+document.getElementById("save_btn").addEventListener("click", () => {
+    savePalettePOST();
+    saveHexConfirmationContainer.classList.add("saved");
+    setTimeout(() => {
+        saveHexConfirmationContainer.classList.remove("saved");
+    }, 2000);
+});

@@ -176,7 +176,7 @@ padding-right: 10%;
 
 
 /*Copy Hex Confirmation*/
-.copy_hex_confirmation_container {
+.copy_hex_confirmation_container, .save_palette_confirmation_container {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -187,26 +187,27 @@ padding-right: 10%;
     transition: all 300ms ease-in-out;
 }
 
-.copy_hex_confirmation {
+.copy_hex_confirmation, .save_palette_confirmation {
     padding: 0.5rem 1rem;
     background-color: black;
     border-radius: 20px;
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
-.copy_hex_confirmation i {
+.copy_hex_confirmation i, .save_palette_confirmation i {
     color: white;
 }
 
-.copy_hex_confirmation span {
+.copy_hex_confirmation span, .save_palette_confirmation span {
     margin: 0 5px 0 8px;
     color: white;
 }
 
-.copy_hex_confirmation_container.copied {
+.copy_hex_confirmation_container.copied, .save_palette_confirmation_container.saved {
     bottom: 9rem;
     opacity: 1;
 }
+
 /*
 *
 *Hover

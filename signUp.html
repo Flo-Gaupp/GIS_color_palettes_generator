@@ -15,7 +15,7 @@
 
     <!--JavaScipt-->
     <script src="scripts/script.js" defer></script>
-    <script src="scripts/signIn.js" defer></script>
+    <script type="module" src="scripts/signUp.js" defer></script>
 
 </head>
 <body>
@@ -55,12 +55,13 @@
             </div>
             <div class="formular">
                 <form>
-                    <input type="text" placeholder="Username">
-                    <input type="password" placeholder="Password">
-                    <input type="password" placeholder="Repeat Password">
+                    <input id="username" type="text" placeholder="Username">
+                    <input id="password" type="password" placeholder="Password">
+                    <input id="passwordRepeat" type="password" placeholder="Repeat Password">
                 </form>
                 <button class="signIn_btn btn" type="button">Sign Up</button>
                 <button class="close_btn btn" type="button">Close</button>
+                <span id="errorMessage"></span>
             </div>
         </div>
     </div>
