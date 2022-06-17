@@ -49,7 +49,7 @@ async function checkSignStatus() {
             _signIn.innerHTML = "Log out";
             _signIn.removeEventListener("click", signInListener);
             _signIn.addEventListener("click", logOutListener);
-            _signUp.innerHTML = "my profile";
+            _signUp.innerHTML = "my colors";
             _signUp.removeEventListener("click", signUpListener);
             _signUp.addEventListener("click", ()=> {
                 window.location.href = "user_palettes.html";
