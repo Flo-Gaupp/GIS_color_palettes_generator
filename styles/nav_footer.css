@@ -12,6 +12,7 @@ header {
 /*top nav*/
 
 .top_nav {
+    position: relative;
     display: flex;
     padding: 0.25rem;
     margin: 0;
@@ -43,11 +44,17 @@ header {
     font-weight: 700;
 }
 
+
 /*
 *
 *visible Menu List styling
 *
 */
+#welcome_username {
+    margin-right: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
 
 .main_list_top_nav {
     display: flex;
@@ -303,6 +310,12 @@ footer p em {
 *MEDIA SCREEN
 *
 */
+
+@media screen and (max-width: 1040px) {
+    #welcome_username {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 580px) {
 

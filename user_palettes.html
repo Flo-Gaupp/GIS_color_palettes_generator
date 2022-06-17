@@ -2,19 +2,21 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Color Palettes Generator">
     <meta name="author" content="Florian Gaupp">
-    <title>ColGen - The super fast color palette generator</title>
+    <title>Popular Color Palettes - ColGen</title>
 
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/6fe6b99db9.js" crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/content_index.css">
+    <link rel="stylesheet" href="styles/content_explore_palettes.css">
 
     <!--JavaScipt-->
     <script src="scripts/script.js" defer></script>
+    <script type="module" src="scripts/user_palettes.js" defer></script>
+    
 </head>
 <body>
     <header>
@@ -34,7 +36,7 @@
                         <div id="welcome_username"></div>
                     </li>
                     <li class="tools_hidden_menu">
-                        <a  class="tools_btn link"  >      <!--toggle for hidden menu-->
+                        <a class="tools_btn link">      <!--toggle for hidden menu-->
                             Tools
                             <i class="fa-solid fa-circle-chevron-down dropdown_icon"></i>    <!--Icon Dropdown-->
                         </a>
@@ -62,7 +64,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href="Image  Picker">
                                         <i class="fa-solid fa-2x fa-image page_icon"></i> <!--Icon Image-->
                                         <div>
                                             <h4>Image Picker</h4>
@@ -71,7 +73,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href="Contrast Checker">
                                         <i class="fa-solid fa-2x fa-circle-half-stroke page_icon"></i> <!--Icon Contrast-->
                                         <div>
                                             <h4>Contrast Checker</h4>
@@ -97,96 +99,34 @@
                 </ul>
         </nav>
 
-    </header>
-    <main>
+    <!--Second Nav/Searchbar-->
 
-        <!--Main Content-->
-
-        <div class="index_main_content wrapper">
-            
-            <!--Main Content Text-->
-
-            <div class="index_main_content_left">
-                <div class="index_main_content_text">   
-                    <h1>The super fast color palettes generator</h1>
-                    <p>Create the perfect palette or get inspired by thousands of beautiful color schemes</p>
-                </div>
-                <div class="index_main_content_button">
-                    <a class="btn" href="palette_generator.html">Start the generator!</a>    <!--Button-->
-                    <a class="btn" href="explore_palettes.html">Explore trending palettes</a> <!--Button-->
-                </div> 
-            </div>
-
-            <!--Main Content Image Color-palettes-->
-
-            <img class="color_palettes" src="assets/images/Color_Palattes.png" alt="Farbpaletten">
+        <div class="explore_palettes_searchbar">
+            <i class="fa-solid fa-2x fa-magnifying-glass icon_lupe"></i> <!--Lupe Icon-->
+            <input type="text" class="explore_palettes_searchbar_input" placeholder="Search with colors, topics, styles or hex values...">
         </div>
-        
-        <!--Page Menu-->
-
-        <div class="index_main_page_menu">  
-            <a href="palette_generator.html">
-                <div class="index_main_page_menu_box">   
-                    <i class="fa-solid fa-3x fa-wand-magic-sparkles page_icon"></i> <!--Icon Magic-->
-                    <strong>Palette generator</strong>
-                    <p>Create your palettes in seconds</p>
-                </div>
-
-                <div class="index_main_page_menu_hidden">   
-                    <p>Make a palette</p>
-                </div>
-            </a>
-
-
-            <a href="explore_palettes.html">
-                <div class="index_main_page_menu_box">  
-                    <i class="fa-solid fa-3x fa-swatchbook page_icon"></i> <!--Icon Swatchbook-->
-                    <strong>Explore Palettes</strong>
-                    <p>Browse millions of trending color schemes</p>
-                </div>
-
-                <div class="index_main_page_menu_hidden">  
-                    <p>Explore</p>
-                </div>
-            </a>
+    </header>
     
 
-            <a>
-                <div class="index_main_page_menu_box">  
-                    <i class="fa-solid fa-3x fa-image page_icon"></i> <!--Icon Image-->
-                    <strong>Image  Picker</strong>
-                    <p>Get beautiful palettes from your photos</p>
-                </div>
+    <main>
 
-                <div class="index_main_page_menu_hidden">
-                    <p>Upload photos</p>
-                </div>
-            </a>
+        <!--Main Title-->
+        <section class="title">
+            <div class="title_text">
+                    <h1 id="headline_userPalettes">Popular Color Palettes</h1>
+                    <h2>Have a look at the Palettes you saved</h2>
+            </div>
+        </section>
 
+        <!--Grid Color-palettes-->
 
-            <a>
-                <div class="index_main_page_menu_box">  
-                    <i class="fa-solid fa-3x fa-circle-half-stroke page_icon"></i> <!--Icon Contrast-->
-                    <strong>Contrast Checker</strong>
-                    <p>Check the contrast between two colors</p>
-                </div>
-
-                <div class="index_main_page_menu_hidden">
-                    <p>Increase legibility</p>
-                </div>
-            </a>
-                 
-        </div>
-        
-       <!--used by awesome companies-->
-        
-        <p class="used_by_companies">Used by awesome companies</p>     
+        <section class="color_palettes_result">
+            <div id="resultContainer" class="color_palettes_result_grid wrapper">
+            </div>
+            <aside class="load_more">
+                <a id="loadMoreButton" class="load_more_btn btn">Load more</a>
+            </aside>
+        </section>
     </main>
-
-    <!--footer-->
-
-    <footer>
-        <p>@ ColGen by <em>Florian Gaupp</em>. From a creative to all the others.</p>
-    </footer>
 </body>
 </html>

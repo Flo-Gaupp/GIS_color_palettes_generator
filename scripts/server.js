@@ -26,6 +26,25 @@ const server = http.createServer(async (request, response) => {
 
 
     switch (url.pathname) {
+    case "/logOut":
+        if (request.method === "GET") {
+            signedIn = false;
+            response.end();
+        }
+        break;
+
+
+    case "/signStatus":
+        if (request.method === "GET") {
+            if (signedIn === false) {
+                response.end("none signed in user");
+            } else {
+                response.end(JSON.stringify(currentUser.username));
+            }
+        }
+        break;
+
+
     case "/signUp":
         if (request.method === "POST") {
             let jsonString = "";
@@ -38,10 +57,34 @@ const server = http.createServer(async (request, response) => {
                 if (userList.length < 1) {
                     saveUser(jsonString);
                     signedIn = true;
-                    currentUser = jsonString;
+                    currentUser = JSON.parse(jsonString);
                     response.end("success");
                 } else {
                     response.end("error");
+                }
+            });
+        }
+        break;
+
+    case "/signIn":
+        if (request.method === "POST") {
+            let jsonString = "";
+            request.on("data", (data) => {
+                jsonString += data;
+            });
+            request.on("end", async () => {
+                await mongoClient.connect();
+                const userList = await mongoUser.find({ username: JSON.parse(jsonString).username }).toArray();
+                if (userList.length < 1) {
+                    response.end("user_error");
+                } else {
+                    if (userList[0].password !== JSON.parse(jsonString).password) {
+                        response.end("error_password");
+                    } else {
+                        currentUser = userList[0];
+                        signedIn = true;
+                        response.end("success");
+                    }
                 }
             });
         }
@@ -51,6 +94,17 @@ const server = http.createServer(async (request, response) => {
     case "/loadMore":
         if (request.method === "GET") {
             const allPalettes = await mongoPalettes.find().toArray();
+            for (let counter = 0; counter < allPalettes.length; counter++) {
+                paletteHtml += paletteToHtml(allPalettes, counter);
+            }
+            response.end(paletteHtml);
+            paletteHtml = "";
+        }
+        break;
+
+    case "/loadMoreUserPalettes":
+        if (request.method === "GET") {
+            const allPalettes = currentUser.colorPalettes;
             for (let counter = 0; counter < allPalettes.length; counter++) {
                 paletteHtml += paletteToHtml(allPalettes, counter);
             }
@@ -78,6 +132,8 @@ const server = http.createServer(async (request, response) => {
 async function savePalette(jsonString) {
     await mongoClient.connect();
     await mongoPalettes.insertOne(JSON.parse(jsonString));
+    currentUser.colorPalettes.push(JSON.parse(jsonString));
+    await mongoUser.replaceOne({ username: currentUser.username }, currentUser);
 }
 
 // Create User to MongoDB

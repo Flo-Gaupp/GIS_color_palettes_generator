@@ -17,6 +17,11 @@ _closeBtn.addEventListener("click", ()=> {
 });
 
 _signUpBtn.addEventListener("click", signUp);
+document.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        signUp();
+    }
+});
 
 
 // SignUp => Check if Username exist and password matches
@@ -30,6 +35,20 @@ async function signUp() {
         password.value = "";
         passwordRepeat.value = "";
         errorMessage.innerHTML = "Passwords are not identical!";
+    } else if (user.username.length < 1) {
+        username.style.borderColor = "red";
+        password.style.borderColor = "grey";
+        passwordRepeat.style.borderColor = "grey";
+        password.value = "";
+        passwordRepeat.value = "";
+        errorMessage.innerHTML = "Type in a username";
+    } else if (user.password.length < 6) {
+        username.style.borderColor = "grey";
+        password.style.borderColor = "red";
+        passwordRepeat.style.borderColor = "red";
+        password.value = "";
+        passwordRepeat.value = "";
+        errorMessage.innerHTML = "Your password must have 6 digits";
     } else {
         const response = await fetch(`${url}signUp`, {
             method: "post",

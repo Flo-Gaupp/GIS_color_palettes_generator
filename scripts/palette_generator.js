@@ -12,6 +12,7 @@ const _colors = document.getElementsByClassName("palette_generator_color");
 const _lockIconAtag = document.getElementsByClassName("colorbar_toolbar_unlock");
 const _lockIcon = document.getElementsByClassName("icon_unlock");
 const _colorLabel = document.getElementsByClassName("colorLabel");
+const welcomeUser = document.getElementById("welcome_username");
 
 
 // eslint-disable-next-line max-len
@@ -102,10 +103,29 @@ async function savePalettePOST() {
 }
 
 
-document.getElementById("save_btn").addEventListener("click", () => {
-    savePalettePOST();
-    saveHexConfirmationContainer.classList.add("saved");
-    setTimeout(() => {
-        saveHexConfirmationContainer.classList.remove("saved");
-    }, 2000);
+document.getElementById("save_btn").addEventListener("click", async () => {
+    if (await checkSignStatus() === true) {
+        savePalettePOST();
+        saveHexConfirmationContainer.classList.add("saved");
+        setTimeout(() => {
+            saveHexConfirmationContainer.classList.remove("saved");
+        }, 2000);
+    } else {
+        welcomeUser.innerHTML = "Sign Up to save Palettes!";
+        welcomeUser.style.color = "red";
+    }
 });
+
+async function checkSignStatus() {
+    const response = await fetch(`${url}signStatus`);
+    const datapromise = response.text();
+    const status = datapromise.then(async ()=> {
+        if (await datapromise !== "none signed in user") {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    return status;
+}
+
